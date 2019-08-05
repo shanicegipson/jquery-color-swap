@@ -1,18 +1,18 @@
 $(document).ready(readyNow);
 
-let element = 0;
+let element = null;
 
 function readyNow() {
     $('.js-btn-generate').on('click', addElement);
     $('.js-container').on('click', '.js-btn-yellow', changeYellow);
     $('.js-container').on('click', '.js-btn-delete',  deleteElement);
-    clickCounter();
+
 }
 
 function addElement (){
     $('.js-container').append(`
         <div>
-            <p>${element}
+            <p>${clickCounter}
             <button class="js-btn-yellow">Yellow</button>
             <button class="js-btn-delete">DELETE</button>
             </p>
@@ -20,13 +20,13 @@ function addElement (){
 }
 
 function clickCounter (){
-    element++;
+    element ++;
 }
 
 function changeYellow(){
-    console.log ('in Yellow');
+    $(this).parent().addClass('new');
 }
 
 function deleteElement () {
-    console.log('in delete');
+    $(this).parent().remove();
 }
