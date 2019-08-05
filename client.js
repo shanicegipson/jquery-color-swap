@@ -1,6 +1,6 @@
 $(document).ready(readyNow);
 
-let element = null;
+let element = 1;
 
 function readyNow() {
     $('.js-btn-generate').on('click', addElement);
@@ -12,11 +12,13 @@ function readyNow() {
 function addElement (){
     $('.js-container').append(`
         <div>
-            <p>${clickCounter}
+            <p>${element}
             <button class="js-btn-yellow">Yellow</button>
             <button class="js-btn-delete">DELETE</button>
             </p>
         </div>`);
+
+        clickCounter();
 }
 
 function clickCounter (){
